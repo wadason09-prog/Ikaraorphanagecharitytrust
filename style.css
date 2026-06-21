@@ -1,0 +1,1324 @@
+/* ==========================================
+   IOCT PREMIUM NGO WEBSITE
+   GLOBAL SETTINGS
+========================================== */
+
+:root{
+
+    --primary:#1c8f57;
+    --primary-dark:#145c3a;
+
+    --secondary:#f4b400;
+
+    --white:#ffffff;
+
+    --dark:#1f2937;
+
+    --gray:#6b7280;
+
+    --light:#f7f9fc;
+
+    --shadow:
+    0 15px 35px rgba(0,0,0,.08);
+
+    --radius:16px;
+
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+    background-image: url("images/charity5.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--dark);
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   IOCT GOLDEN SCALE PRELOADER
+========================================== */
+#preloader{
+    position:fixed;
+    inset:0;
+     background:transparent;
+
+
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at center,
+    #1c1c1c 0%,
+    #050505 100%);
+   
+
+    z-index:999999;
+
+    transition:
+    opacity 2.5s ease,
+    visibility 1.5s ease;
+}
+
+#preloader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.preloader-content{
+    text-align:center;
+}
+
+.preloader-content h2{
+    color:#ffd700;
+    margin-top:20px;
+}
+
+.preloader-content p{
+    color:#ddd;
+}
+
+#loading-percent{
+    margin-top:15px;
+    color:#ffd700;
+    font-size:2rem;
+    font-weight:700;
+}
+
+#scale-image{
+    border-radius: 509px;
+    border: transparent;
+
+    width:420px;
+    max-width:85vw;
+
+    transform-origin:center center;
+
+    animation:
+        balance 7s ease-in-out infinite,
+        glow 3s ease-in-out infinite;
+
+    filter:
+    drop-shadow(0 0 20px rgba(255,215,0,.5))
+    drop-shadow(0 0 50px rgba(255,215,0,.3));
+}
+
+@keyframes glow{
+
+    0%,100%{
+
+        filter:
+        drop-shadow(0 0 15px rgba(255,215,0,.4))
+        drop-shadow(0 0 30px rgba(255,215,0,.2));
+    }
+
+    50%{
+
+        filter:
+        drop-shadow(0 0 35px rgba(255,215,0,.9))
+        drop-shadow(0 0 70px rgba(255,215,0,.6));
+    }
+}
+
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+
+#progress-bar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0%;
+
+    height:5px;
+
+    background:var(--secondary);
+
+    z-index:9999;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+
+    position:fixed;
+
+    width:100%;
+
+    top:0;
+
+    left:0;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* =========================
+   MODERN TRANSPARENT NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+/* Modern Transparent Buttons */
+.nav-links a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.35);
+
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Active Button */
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Animated Shine Effect */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+
+    transition: 0.6s;
+}
+
+.nav-links a:hover::before {
+    left: 120%;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        transition: all 0.35s ease-in-out;
+        position: absolute;
+        top: 100%;
+        right: 5%;
+
+        flex-direction: column;
+        width: 220px;
+        padding: 15px;
+
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(20px);
+
+        border-radius: 15px;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.logo a{
+
+    text-decoration:none;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--dark);
+
+}
+
+.logo img{
+
+    width:50px;
+
+}
+
+.logo span{
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+}
+
+nav ul{
+
+    display:flex;
+
+    gap:25px;
+
+    list-style:none;
+
+}
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:var(--dark);
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+/* ==========================================
+   DARK MODE BUTTON
+========================================== */
+
+#darkModeBtn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:var(--light);
+
+}
+
+/* ==========================================
+   DONATE BUTTON
+========================================== */
+
+.donate-btn{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.donate-btn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.35)
+    ),
+    url(images/hero.jpg);
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 20px;
+
+    position:relative;
+
+}
+
+.hero-content{
+
+    max-width:850px;
+
+    color:white;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    padding:12px 20px;
+
+    border-radius:50px;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+    font-weight:800;
+
+}
+
+.hero p{
+
+    font-size:1.2rem;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================
+   HERO BUTTONS
+========================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.secondary-btn{
+
+    background:white;
+
+    color:var(--dark);
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   SECTION TITLE
+========================================== */
+
+.section-title{
+
+    text-align:center;
+
+    font-size:2.5rem;
+
+    margin-bottom:60px;
+
+    color:var(--dark);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:991px){
+
+    nav{
+
+        display:none;
+
+    }
+
+    .hero h1{
+
+        font-size:2.8rem;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+}
+
+/* ==========================================
+   IMPACT SECTION
+========================================== */
+
+.impact{
+
+    padding:100px 0;
+
+    background:var(--light);
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+.stat{
+
+    background:white;
+
+    text-align:center;
+
+    padding:40px 25px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+.stat:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.stat h3{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+}
+
+.stat p{
+
+    color:var(--gray);
+
+}
+
+/* ==========================================
+   ABOUT PREVIEW
+========================================== */
+
+.about-preview{
+
+    padding:100px 0;
+
+    text-align:center;
+
+}
+
+.about-preview p{
+
+    max-width:800px;
+
+    margin:20px auto 35px;
+
+    color:var(--gray);
+
+}
+
+/* ==========================================
+   PROGRAMS SECTION
+========================================== */
+
+.programs{
+
+    padding:100px 0;
+
+    background:var(--light);
+
+}
+
+.program-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+.program-card{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+    text-align:center;
+
+}
+
+.program-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.program-card i{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.program-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.program-card p{
+
+    color:var(--gray);
+
+}
+
+/* ==========================================
+   SPONSOR SECTION
+========================================== */
+
+.sponsor-child{
+
+    padding:100px 0;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(28,143,87,.9),
+        rgba(28,143,87,.9)
+    );
+
+    color:white;
+
+}
+
+.sponsor-child h2{
+
+    font-size:2.5rem;
+
+}
+
+.sponsor-child p{
+
+    margin:20px 0 30px;
+
+}
+
+/* ==========================================
+   DONATION GOAL
+========================================== */
+
+.donation-goal{
+
+    padding:100px 0;
+
+    text-align:center;
+
+}
+
+.progress-container{
+
+    width:100%;
+
+    max-width:800px;
+
+    margin:30px auto;
+
+    background:#e5e7eb;
+
+    border-radius:50px;
+
+    height:22px;
+
+    overflow:hidden;
+
+}
+
+.progress-fill{
+
+    width:45%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    border-radius:50px;
+
+}
+
+/* ==========================================
+   TESTIMONIALS
+========================================== */
+
+.testimonials{
+
+    padding:100px 0;
+
+    background:var(--light);
+
+}
+
+.testimonial-slider{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.testimonial{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.testimonial p{
+
+    font-size:1.1rem;
+
+    margin-bottom:20px;
+
+}
+
+.testimonial h4{
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   TIMELINE
+========================================== */
+
+.timeline{
+
+    padding:100px 0;
+
+}
+
+.timeline-item{
+
+    border-left:4px solid var(--primary);
+
+    padding-left:30px;
+
+    margin-bottom:40px;
+
+}
+
+.timeline-item h3{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================
+   GALLERY
+========================================== */
+
+.gallery-preview{
+
+    padding:100px 0;
+
+    background:var(--light);
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+}
+
+.gallery-grid img{
+
+    width:100%;
+
+    border-radius:var(--radius);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ==========================================
+   PARTNERS
+========================================== */
+
+.partners{
+
+    padding:100px 0;
+
+    text-align:center;
+
+}
+
+.partner-logos{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(150px,1fr));
+
+    gap:30px;
+
+    align-items:center;
+
+}
+
+.partner-logos img{
+
+    width:100%;
+
+    max-width:120px;
+
+    margin:auto;
+
+    filter:grayscale(100%);
+
+    transition:.3s;
+
+}
+
+.partner-logos img:hover{
+
+    filter:none;
+
+}
+
+/* ==========================================
+   TRANSPARENCY
+========================================== */
+
+.transparency{
+
+    padding:100px 0;
+
+    background:var(--light);
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   VOLUNTEER CTA
+========================================== */
+
+.volunteer-cta{
+
+    padding:100px 0;
+
+    text-align:center;
+
+}
+
+.volunteer-cta h2{
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================================
+   BLOG PREVIEW
+========================================== */
+
+.blog-preview{
+
+    padding:100px 0;
+
+    background:var(--light);
+
+}
+
+.blog-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+.blog-grid article{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.blog-grid h3{
+
+    margin-bottom:15px;
+
+}
+
+/* ==========================================
+   NEWSLETTER
+========================================== */
+
+.newsletter{
+
+    padding:100px 0;
+
+    text-align:center;
+
+}
+
+.newsletter form{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.newsletter input{
+
+    width:350px;
+
+    max-width:100%;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:50px;
+
+}
+
+.newsletter button{
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   CONTACT PREVIEW
+========================================== */
+
+.contact-preview{
+
+    padding:100px 0;
+
+    background:var(--light);
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    background:#161e30;
+
+    color:rgba(255, 255, 255, 0.753);
+
+    padding:70px 0;
+
+    text-align:center;
+
+}
+
+.socials{
+
+    margin:25px 0;
+
+}
+
+.socials a{
+
+    color:white;
+
+    font-size:1.4rem;
+
+    margin:0 10px;
+
+    transition:.3s;
+
+}
+
+.socials a:hover{
+
+    color:var(--secondary);
+
+}
+
+/* ==========================================
+   WHATSAPP BUTTON
+========================================== */
+
+.whatsapp-btn{
+
+    position:fixed;
+
+    left:20px;
+
+    bottom:20px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#25D366;
+
+    color:white;
+
+    font-size:1.8rem;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ==========================================
+   FLOATING DONATE BUTTON
+========================================== */
+
+.floating-donate{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--secondary);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:1.5rem;
+
+    z-index:999;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ==========================================
+   SIMPLE ANIMATIONS
+========================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:.8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
